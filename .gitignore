@@ -1,0 +1,17 @@
+build/
+Build/
+build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.o
+*.a
+*.so
+
+.vscode/
+
+data/veritabani.txt
+
+*.DS_Store
+Thumbs.db
