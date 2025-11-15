@@ -25,8 +25,8 @@ std::string Book::getYear() const{
 }
 
 void Book::display() const{
-    std::cout << "Kitabın ISBN numarası: " << m_isbn;
-    std::cout << "Kitabın başlığı: " << m_title;
-    std::cout << "Kitabın yazarı: " << m_author;
-    std::cout << "Kitabın basım yılı: " << m_year;
+    std::cout << "ISBN number of the book: " << m_isbn << "\n";
+    std::cout << "Title of the book: " << m_title << "\n";
+    std::cout << "Author of the book: " << m_author << "\n";
+    std::cout << "Publication year of the book: " << m_year << "\n\n";
 }
