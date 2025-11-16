@@ -11,7 +11,7 @@ Makefile
 
 .vscode/
 
-data/veritabani.txt
+data/database.txt
 
 *.DS_Store
 Thumbs.db
