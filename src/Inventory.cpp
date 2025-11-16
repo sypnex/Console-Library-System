@@ -7,10 +7,14 @@ Inventory::Inventory(){};
 
 void Inventory::listAllBooks() const{
     if(m_books.size() != 0){
+        std::cout << "There is " << m_books.size() << " books total in this library.\n\n";
         for(int i = 0; i < m_books.size(); i++){
             m_books[i].display();
         }
     }
+
+    else
+        std::cout << "\n The library is empty. \n\n";
 };
 
 void Inventory::addBook(const std::string& isbn, const std::string& title, const std::string& author, const std::string& year){
@@ -23,11 +27,11 @@ void Inventory::addBook(const std::string& isbn, const std::string& title, const
 
     if(!isEqual){
         m_books.push_back(newBook);
-        std::cout << "The book with isbn number " << isbn << " successfully added.";
+        std::cout << "The book with isbn number " << isbn << " successfully added.\n\n";
     }
 
     else{
-        std::cout << "The book with isbn number " << isbn << " has already been added.";
+        std::cout << "The book with isbn number " << isbn << " has already been added.\n\n";
     }
 };
 
@@ -43,13 +47,13 @@ bool Inventory::updateBook(const std::string& isbn, const std::string& newTitle,
         }
 
         if(isUpdated){
-            std::cout << "The book with isbn number " << isbn << " has been updated successfully."; 
+            std::cout << "The book with isbn number " << isbn << " has been updated successfully.\n\n"; 
             return true;
         }
 
         
         else
-            std::cout << "The book with isbn number " << isbn << " doesn't exist in this library."; return false; 
+            std::cout << "The book with isbn number " << isbn << " doesn't exist in this library.\n\n"; return false; 
         
     }
 };
@@ -66,13 +70,13 @@ bool Inventory::deleteBook(const std::string& isbn){
         }
 
         if(isDeleted){
-            std::cout << "The book with isbn number " << isbn << " has been deleted successfully."; 
+            std::cout << "The book with isbn number " << isbn << " has been deleted successfully.\n\n"; 
             return true; 
         }
             
 
         else{
-            std::cout << "There is an error with deleting the book.";
+            std::cout << "There is an error with deleting the book.\n\n";
             return false;
         }
     }
@@ -81,7 +85,7 @@ bool Inventory::deleteBook(const std::string& isbn){
 void Inventory::saveToFile(const std::string& fileName) const{
     std::ofstream outFile(fileName);
     if(!outFile.is_open()){
-        std::cout << "There is an error with opening the data file.";
+        std::cout << "There is an error with opening the data file.\n\n";
         return;
     }
 
@@ -97,7 +101,7 @@ void Inventory::loadFromFile(const std::string& fileName){
     m_books.clear();
     std::ifstream inFile(fileName);
     if(!inFile.is_open()){
-        std::cout << "There is an error with opening the data file.";
+        std::cout << "There is an error with opening the data file.\n\n";
         return;
     }
 
